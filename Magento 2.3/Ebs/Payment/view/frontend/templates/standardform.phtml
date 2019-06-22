@@ -1,0 +1,23 @@
+<html>
+	<body><p align="center">You will be redirected to E-Billing Solutions in a few seconds.</p>
+		<form name="ebsForm" id="ebsFormId" action="<?php echo $this->escapeHtml($this->getActionUrl()); ?>" method="POST">
+		<?php
+			$params = $this->getParams();
+			foreach ($params as $key => $val) {
+				if (($key == 'address') || ($key == 'ship_address')) {
+					if(isset($val[1]) && !empty($val[1])) {
+						echo '<input type="hidden" name="'.$key.'" value="'.$val[0].','.$val[1].'" size="60" />';
+					} else {
+						echo '<input type="hidden" name="'.$key.'" value="'.$val[0].'" size="60" />';
+					}
+					
+				} else {
+					echo '<input type="hidden" name="'.$key.'" value="'.$val.'" size="60" />';
+				}
+			}
+			echo '<input type="hidden" name="secure_hash" value="'.$this->escapeHtml($this->getHashValue()).'" size="60" />';
+		?>
+		</form>
+		<script type="text/javascript">setTimeout(function(){document.getElementById("ebsFormId").submit()},5000)</script>
+	</body>
+</html>

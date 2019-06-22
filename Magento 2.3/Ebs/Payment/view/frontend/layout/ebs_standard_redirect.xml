@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">       
+
+ <head>
+        <title>Please wait while redirecting to Payment Page</title>
+    </head>
+	
+	 
+    <referenceBlock name="content">
+        <block
+            template="Ebs_Payment::standardform.phtml"
+            class="Ebs\Payment\Block\Standard\Redirect"
+            name="ebs_standard_redirect" cacheable="false"/>
+    </referenceBlock>
+</page> 

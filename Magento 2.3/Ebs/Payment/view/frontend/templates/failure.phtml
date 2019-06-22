@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<center>
+<h1 class="text-center" style="margin-bottom:25px;">Your Payment Failed!</h1>
+<p style="color:#000;"><?php /* @escapeNotVerified */ echo __('Sorry, Unable to process your order') ?>
+<?php if ($block->getRealOrderId()) : ?>(<?php /* @escapeNotVerified */ echo __('Order #') . $block->getRealOrderId() ?>)<?php endif ?></p>
+<?php if ($error = $block->getErrorMessage()) : ?><p style="color:#000;"><?php /* @escapeNotVerified */ echo __('Error :') .$error ?></p><?php endif ?>
+<p style="color:#000;"><?php /* @escapeNotVerified */ echo __('Click <a href="%1" style="font-weight:bold; text-decoration:underline;color:#000;">here</a> to continue shopping.', $block->escapeUrl($block->getContinueShoppingUrl())) ?></p>
+
+</center>
